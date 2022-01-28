@@ -1,0 +1,37 @@
+\input regression-test.tex
+\documentclass{article}
+\usepackage{clistex,amsmath,amssymb}
+\ExplSyntaxOn
+
+\ExplSyntaxOff
+\begin{document}
+\ExplSyntaxOn
+\START
+
+\hbox_set:Nn\l_tmpa_box
+{
+  $\clistex_inline:nnnn
+  {Z,C,Q,R}
+  {comma:N}
+  {\mathbb{#1}}
+  {nest}
+  {serial_math_and:}
+  {}
+  {end}$
+}
+\TEST
+{
+  $\clistex_inline:nnnn
+  {Z,C,Q,R}
+  {comma:N}
+  {\mathbb{#1}}
+  {nest}
+  {serial_math_and:}
+  {}
+  {end}$
+}
+{ \box_use:N\l_tmpa_box }
+
+%\END
+\ExplSyntaxOff
+\end{document}

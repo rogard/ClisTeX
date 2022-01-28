@@ -1,0 +1,40 @@
+\input regression-test.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{clistex}
+\ExplSyntaxOn
+
+\ExplSyntaxOff
+\begin{document}
+\ExplSyntaxOn
+\START
+
+\hbox_set:Nn \l_tmpa_box
+{ $\clistex:nnn{}{serial_math_and:}{}$ }
+\TEST
+{  \clistex:nnn{}{serial_math_and:}{} }
+{ \box_use:N\l_tmpa_box }
+
+\hbox_set:Nn \l_tmpa_box
+{ $\clistex:nnn{x}{serial_math_and:}{}$ }
+\TEST
+{  $\clistex:nnn{x}{serial_math_and:}{}$ }
+{ \box_use:N\l_tmpa_box }
+
+\hbox_set:Nn \l_tmpa_box
+{ $\clistex:nnn{x,y}{serial_math_and:}{}$ }
+\TEST
+{  \clistex:nnn{x,y}{serial_math_and:}{} }
+{ \box_use:N\l_tmpa_box }
+
+\hbox_set:Nn \l_tmpa_bool
+{ $\clistex:nnn{x,y,z}{serial_math_and:}{}$ }
+\TEST
+{  $\clistex:nnn{x,y,z}{serial_math_and:}{}$ }
+{ \box_use:N\l_tmpa_box }
+
+%\END
+\ExplSyntaxOff
+\end{document}
+
+

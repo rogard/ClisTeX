@@ -1,0 +1,76 @@
+\input regression-test.tex
+\documentclass{article}
+\usepackage{clistex}
+\ExplSyntaxOn
+
+\ExplSyntaxOff
+\begin{document}
+\ExplSyntaxOn
+\START
+
+\bool_set:Nn \l_tmpa_bool
+{%
+  \exp_args:Ne
+  \tl_if_empty_p:n
+  {%
+    \clistex:nnn{}{serial_last_and:}{}
+  }
+}
+\TEST
+{  \clistex:nnn{}{serial_last_and:}{} }
+{\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
+
+\bool_set:Nn \l_tmpa_bool
+{%
+  \exp_args:Ne
+  \tl_if_empty_p:n
+  {%
+    \clistex:nnn{x}{serial_last_and:}{}
+  }
+}
+\TEST
+{  \clistex:nnn{x}{serial_last_and:}{} }
+{\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
+
+\bool_set:Nn \l_tmpa_bool
+{%
+  \exp_args:Ne
+  \tl_if_empty_p:n
+  {%
+    \clistex:nnn{x,y}{serial_last_and:}{}
+  }
+}
+\TEST
+{  \clistex:nnn{x,y}{serial_last_and:}{} }
+{\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
+
+\bool_set:Nn \l_tmpa_bool
+{%
+  \exp_args:Ne
+  \str_if_eq_p:nn
+  {%
+    \clistex:nnn{x,y,z}{serial_last_and:}{}
+  }
+  {,~and~z}
+}
+\TEST
+{  \clistex:nnn{x,y,z}{serial_last_and:}{} }
+{\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
+
+\bool_set:Nn \l_tmpa_bool
+{%
+  \exp_args:Ne
+  \str_if_eq_p:nn
+  {%
+    \clistex:nnn{{f,oo},{b,ar},{b,az}}{serial_last_and:}{}
+  }{,~and~{b,az}}
+}
+\TEST
+{  \clistex:nnn{{f,oo},{b,ar}}{serial_last_and:}{} }
+{\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
+
+%\END
+\ExplSyntaxOff
+\end{document}
+
+

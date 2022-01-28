@@ -1,0 +1,39 @@
+\input regression-test.tex
+\documentclass{article}
+\usepackage{clistex}
+\ExplSyntaxOn
+
+\ExplSyntaxOff
+\begin{document}
+\ExplSyntaxOn
+\START
+
+\hbox_set:Nn\l_tmpa_box
+{
+  \clistex_inline:nnnn
+  {foo,bar}
+  {comma:}
+  {}
+  {join}
+  {baz}
+  {comma:}
+  {}
+  {end}
+}
+\TEST
+{
+  \clistex_inline:nnnn
+  {foo,bar}
+  {comma:}
+  {}
+  {join}
+  {baz}
+  {comma:}
+  {}
+  {end}
+}
+{ \box_use:N\l_tmpa_box }
+
+%\END
+\ExplSyntaxOff
+\end{document}

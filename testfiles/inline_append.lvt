@@ -1,0 +1,43 @@
+\input regression-test.tex
+\documentclass{article}
+\usepackage{clistex}
+\ExplSyntaxOn
+
+\ExplSyntaxOff
+\begin{document}
+\ExplSyntaxOn
+\START
+
+\hbox_set:Nn\l_tmpa_box
+{
+  \clistex_inline:nnnn
+  {Jules,Jim,Catherine}
+  {first_apply:}
+  {}
+  {append}
+  {middle_comma:N}
+  {~#1}
+  {append}
+  {last_comma:N}
+  {~et~#1}
+  {end}
+}
+\TEST
+{
+  \clistex_inline:nnnn
+  {Jules,Jim,Catherine}
+  {first_apply:}
+  {}
+  {append}
+  {middle_comma:N}
+  {~#1}
+  {append}
+  {last_comma:N}
+  {~and~#1}
+  {end}
+}
+{ \box_use:N\l_tmpa_box }
+
+%\END
+\ExplSyntaxOff
+\end{document}

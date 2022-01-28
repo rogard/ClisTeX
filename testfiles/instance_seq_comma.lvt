@@ -1,0 +1,66 @@
+\input regression-test.tex
+\documentclass{article}
+\usepackage{clistex}
+\ExplSyntaxOn
+
+\ExplSyntaxOff
+\begin{document}
+\ExplSyntaxOn
+\START
+
+\bool_set:Nn \l_tmpa_bool
+{%
+  \exp_args:Ne
+  \tl_if_empty_p:n
+  {%
+    \clistex:nnn{}{comma:}{}
+  }
+}
+\TEST
+{  \clistex:nnn{}{comma:}{} }
+{\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
+
+\bool_set:Nn \l_tmpa_bool
+{%
+  \exp_args:Ne
+  \str_if_eq_p:nn
+  {%
+    \clistex:nnn{x}{comma:}{}
+  }
+  {x}
+}
+\TEST
+{  \clistex:nnn{x}{comma:}{} }
+{\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
+
+\bool_set:Nn \l_tmpa_bool
+{%
+  \exp_args:Ne
+  \str_if_eq_p:nn
+  {%
+    \clistex:nnn{x,y}{comma:}{}
+  }
+  {x,y}
+}
+\TEST
+{  \clistex:nnn{x,y}{comma:}{} }
+{\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
+
+\bool_set:Nn \l_tmpa_bool
+{%
+  \exp_args:Ne
+  \str_if_eq_p:nn
+  {%
+    \clistex:nnn{x,y,z}{comma:}{}
+  }
+  {x,y,z}
+}
+\TEST
+{  \clistex:nnn{x,y,z}{comma:}{} }
+{\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
+
+%\END
+\ExplSyntaxOff
+\end{document}
+
+

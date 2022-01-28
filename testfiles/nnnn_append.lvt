@@ -1,0 +1,49 @@
+\input regression-test.tex
+\documentclass{article}
+\usepackage{clistex}
+\ExplSyntaxOn
+
+% \str_if_eq_p expandable, but \clistex_inline:nnnn is not
+% Thus a reference file
+
+\cs_new:Nn\__erw_foo:n{~#1}
+\cs_new:Nn\__erw_bar:n{~and~#1}
+
+\ExplSyntaxOff
+\begin{document}
+\ExplSyntaxOn
+\START
+
+\hbox_set:Nn\l_tmpa_box
+{
+  \clistex:nnnn
+  {Jules,Jim,Catherine}
+  {first_apply:}
+  {}
+  {append}
+  {middle_comma:N}
+  {\__erw_foo:n}
+  {append}
+  {last_comma:N}
+  {\__erw_bar:n}
+  {end}
+}
+\TEST
+{
+  \clistex:nnnn
+  {Jules,Jim,Catherine}
+  {first_apply:}
+  {}
+  {append}
+  {middle_comma:N}
+  {\__erw_foo:n}
+  {append}
+  {last_comma:N}
+  {\__erw_bar:n}
+  {end}
+}
+{ \box_use:N\l_tmpa_box }
+
+%\END
+\ExplSyntaxOff
+\end{document}
