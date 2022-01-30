@@ -5,8 +5,9 @@
 %% The original source files were:
 %%
 %% clistmap.dtx  (with options: `package')
-%% -----------------------------------------------------------------------------
-%% clistmap ---  Comma separated list partition, differentiated mapping
+%% ----------------------------------------------------------------------------
+%% clistmap ---  Partition a comma separated list, map differentiatedly across
+%% components
 %% Released under the LaTeX Project Public License v1.3c or later
 %% See http://www.latex-project.org/lppl.txt
 %% ----------------------------------------------------------------------------
@@ -15,10 +16,11 @@
  \RequirePackage{xparse, xtemplate, l3keys2e}[2021-06-01]
  \RequirePackage{erw-l3}[2022-01-28]
  \ProvidesExplPackage
- {clistmap}                                   % Package name
- {2022-01-29}                                % Release date
- {1.2}                                       % Release version
- {Comma separated list partition, differentiated mapping}   % Description
+ {clistmap}                                  %^^A Package name
+ {2022-01-29}                                %^^A Release date
+ {1.2}                                       %^^A Release version
+ {Partition a comma separated list,          %^^A Description
+ map differentiatedly across components}
 \cs_generate_variant:Nn\str_if_eq:nnTF{e}
 \cs_generate_variant:Nn\tl_to_str:n{e}
 \cs_generate_variant:Nn\prop_gput:Nnn{Nee}

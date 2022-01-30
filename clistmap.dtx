@@ -23,8 +23,9 @@
 \keepsilent
 \askforoverwritefalse
 \preamble
------------------------------------------------------------------------------
-clistmap ---  Comma separated list partition, differentiated mapping
+----------------------------------------------------------------------------
+clistmap ---  Partition a comma separated list, map differentiatedly across
+components
 Released under the LaTeX Project Public License v1.3c or later
 See http://www.latex-project.org/lppl.txt
 ----------------------------------------------------------------------------
@@ -71,10 +72,11 @@ clistmap.sty, and clistmap.pdf.
 %<package> \RequirePackage{xparse, xtemplate, l3keys2e}[2021-06-01]
 %<package> \RequirePackage{erw-l3}[2022-01-28]
 %<package> \ProvidesExplPackage
-%<package> {clistmap}                                   % Package name
-%<package> {2022-01-29}                                % Release date
-%<package> {1.2}                                       % Release version
-%<package> {Comma separated list partition, differentiated mapping}   % Description
+%<package> {clistmap}                                  %^^A Package name
+%<package> {2022-01-29}                                %^^A Release date
+%<package> {1.2}                                       %^^A Release version
+%<package> {Partition a comma separated list,          %^^A Description
+%<package> map differentiatedly across components}
 %<*driver> 
 \documentclass{l3doc}
 \EnableCrossrefs
@@ -587,6 +589,13 @@ clistmap.sty, and clistmap.pdf.
 % \part{Other}
 % \section{Bibliograhy}
 % \printbibliography[heading=none]
+% \section{To do}\label{other:bug}
+% \begin{enumerate}
+% \item ``Warning: A control sequence of the form ...__clistmap''
+%   That's because of the way \cs[no-index]{__clist_instance_name:nn} is set up,
+%  and passing to it an internal control sequence. So?
+%  Modify \cs[no-index]{__clist_instance_name:nn}.
+% \end{enumerate}
 % \section{Support}\label{other:support}
 % 
 % This package is available from \url{https://github.com/rogard/clistmap}.
