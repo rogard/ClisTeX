@@ -1,6 +1,6 @@
 \input regression-test.tex
 \documentclass{article}
-\usepackage{clistex}
+\usepackage{clistmap}
 \ExplSyntaxOn
 
 \ExplSyntaxOff
@@ -13,11 +13,11 @@
   \exp_args:Ne
   \tl_if_empty_p:n
   {%
-    \clistex:nnn{}{serial_second_and:}{}
+    \clistmap:nnn{}{serial_second_and:}{}
   }
 }
 \TEST
-{  \clistex:nnn{}{serial_second_and:}{} }
+{  \clistmap:nnn{}{serial_second_and:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 \bool_set:Nn \l_tmpa_bool
@@ -25,11 +25,11 @@
   \exp_args:Ne
   \tl_if_empty_p:n
   {%
-    \clistex:nnn{x}{serial_second_and:}{}
+    \clistmap:nnn{x}{serial_second_and:}{}
   }
 }
 \TEST
-{  \clistex:nnn{x}{serial_second_and:}{} }
+{  \clistmap:nnn{x}{serial_second_and:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 \bool_set:Nn \l_tmpa_bool
@@ -37,11 +37,11 @@
   \exp_args:Ne
   \str_if_eq_p:nn
   {%
-    \clistex:nnn{x,y}{serial_second_and:}{}
+    \clistmap:nnn{x,y}{serial_second_and:}{}
   }{,~and~y}
 }
 \TEST
-{  \clistex:nnn{x,y}{serial_second_and:}{} }
+{  \clistmap:nnn{x,y}{serial_second_and:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 \bool_set:Nn \l_tmpa_bool
@@ -49,11 +49,11 @@
   \exp_args:Ne
   \tl_if_empty_p:n
   {%
-    \clistex:nnn{x,y,z}{serial_second_and:}{}
+    \clistmap:nnn{x,y,z}{serial_second_and:}{}
   }
 }
 \TEST
-{  \clistex:nnn{x,y,z}{serial_second_and:}{} }
+{  \clistmap:nnn{x,y,z}{serial_second_and:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 \bool_set:Nn \l_tmpa_bool
@@ -61,11 +61,11 @@
   \exp_args:Ne
   \str_if_eq_p:nn
   {%
-    \clistex:nnn{{f,oo},{b,ar}}{serial_second_and:}{}
+    \clistmap:nnn{{f,oo},{b,ar}}{serial_second_and:}{}
   }{,~and~{b,ar}}
 }
 \TEST
-{  \clistex:nnn{{f,oo},{b,ar}}{serial_second_and:}{} }
+{  \clistmap:nnn{{f,oo},{b,ar}}{serial_second_and:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 %\END

@@ -1,6 +1,6 @@
 \input regression-test.tex
 \documentclass{article}
-\usepackage{clistex}
+\usepackage{clistmap}
 \ExplSyntaxOn
 
 \ExplSyntaxOff
@@ -13,11 +13,11 @@
   \exp_args:Ne
   \tl_if_empty_p:n
   {%
-    \clistex:nnn{}{middle_apply:}{}
+    \clistmap:nnn{}{middle_apply:}{}
   }
 }
 \TEST
-{  \clistex:nnn{}{middle_apply:}{} }
+{  \clistmap:nnn{}{middle_apply:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 \bool_set:Nn \l_tmpa_bool
@@ -25,25 +25,12 @@
   \exp_args:Ne
   \str_if_eq_p:nn
   {%
-    \clistex:nnn{x}{middle_apply:}{}
-  }
-  {}
-}
-\TEST
-{  \clistex:nnn{x}{middle_apply:}{} }
-{\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
-
-\bool_set:Nn \l_tmpa_bool
-{%
-  \exp_args:Ne
-  \str_if_eq_p:nn
-  {%
-    \clistex:nnn{x,y}{middle_apply:}{}
+    \clistmap:nnn{x}{middle_apply:}{}
   }
   {}
 }
 \TEST
-{  \clistex:nnn{x,y}{middle_apply:}{} }
+{  \clistmap:nnn{x}{middle_apply:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 \bool_set:Nn \l_tmpa_bool
@@ -51,12 +38,25 @@
   \exp_args:Ne
   \str_if_eq_p:nn
   {%
-    \clistex:nnn{x,y,z}{middle_apply:}{}
+    \clistmap:nnn{x,y}{middle_apply:}{}
+  }
+  {}
+}
+\TEST
+{  \clistmap:nnn{x,y}{middle_apply:}{} }
+{\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
+
+\bool_set:Nn \l_tmpa_bool
+{%
+  \exp_args:Ne
+  \str_if_eq_p:nn
+  {%
+    \clistmap:nnn{x,y,z}{middle_apply:}{}
   }
   {y}
 }
 \TEST
-{  \clistex:nnn{x,y,z}{middle_apply:}{} }
+{  \clistmap:nnn{x,y,z}{middle_apply:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 %---
@@ -65,12 +65,12 @@
   \exp_args:Ne
   \str_if_eq_p:nn
   {%
-    \clistex:nnn{foo,bar,baz}{middle_apply:}{}
+    \clistmap:nnn{foo,bar,baz}{middle_apply:}{}
   }
   {bar}
 }
 \TEST
-{  \clistex:nnn{foo,bar,baz}{middle_apply:}{} }
+{  \clistmap:nnn{foo,bar,baz}{middle_apply:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 %---
@@ -79,12 +79,12 @@
   \exp_args:Ne
   \str_if_eq_p:nn
   {%
-    \clistex:nnn{{foo},{bar},{baz}}{middle_apply:}{}
+    \clistmap:nnn{{foo},{bar},{baz}}{middle_apply:}{}
   }
   {{bar}}
 }
 \TEST
-{  \clistex:nnn{{foo},{bar},{baz}}{middle_apply:}{} }
+{  \clistmap:nnn{{foo},{bar},{baz}}{middle_apply:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 
@@ -95,12 +95,12 @@
   \exp_args:Ne
   \str_if_eq_p:nn
   {%
-    \clistex:nnn{{f,oo},{b,ar},{b,az}}{middle_apply:}{}
+    \clistmap:nnn{{f,oo},{b,ar},{b,az}}{middle_apply:}{}
   }
   {{b,ar}}
 }
 \TEST
-{  \clistex:nnn{{f,oo},{b,ar},{b,az}}{middle_apply:}{} }
+{  \clistmap:nnn{{f,oo},{b,ar},{b,az}}{middle_apply:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 %\END

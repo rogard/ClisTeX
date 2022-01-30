@@ -1,6 +1,6 @@
 \input regression-test.tex
 \documentclass{article}
-\usepackage{clistex}
+\usepackage{clistmap}
 \ExplSyntaxOn
 
 \ExplSyntaxOff
@@ -10,7 +10,7 @@
 
 \hbox_set:Nn\l_tmpa_box
 {
-  \clistex_inline:nnnn
+  \clistmap_inline:nnnn
   {foo,bar}
   {comma:}
   {}
@@ -22,7 +22,7 @@
 }
 \TEST
 {
-  \clistex_inline:nnnn
+  \clistmap_inline:nnnn
   {foo,bar}
   {comma:}
   {}

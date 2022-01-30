@@ -1,6 +1,6 @@
 \input regression-test.tex
 \documentclass{article}
-\usepackage{clistex}
+\usepackage{clistmap}
 \ExplSyntaxOn
 
 \ExplSyntaxOff
@@ -13,11 +13,11 @@
   \exp_args:Ne
   \tl_if_empty_p:n
   {%
-    \clistex:nnn{}{last_apply:}{}
+    \clistmap:nnn{}{last_apply:}{}
   }
 }
 \TEST
-{  \clistex:nnn{}{last_apply:}{} }
+{  \clistmap:nnn{}{last_apply:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 \bool_set:Nn \l_tmpa_bool
@@ -25,12 +25,12 @@
   \exp_args:Ne
   \str_if_eq_p:nn
   {%
-    \clistex:nnn{x}{last_apply:}{}
+    \clistmap:nnn{x}{last_apply:}{}
   }
   {}
 }
 \TEST
-{  \clistex:nnn{x}{last_apply:}{} }
+{  \clistmap:nnn{x}{last_apply:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 \bool_set:Nn \l_tmpa_bool
@@ -38,12 +38,12 @@
   \exp_args:Ne
   \str_if_eq_p:nn
   {%
-    \clistex:nnn{x,y}{last_apply:}{}
+    \clistmap:nnn{x,y}{last_apply:}{}
   }
   {y}
 }
 \TEST
-{  \clistex:nnn{x,y}{last_apply:}{} }
+{  \clistmap:nnn{x,y}{last_apply:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 \bool_set:Nn \l_tmpa_bool
@@ -51,12 +51,12 @@
   \exp_args:Ne
   \str_if_eq_p:nn
   {%
-    \clistex:nnn{x,y,z}{last_apply:}{}
+    \clistmap:nnn{x,y,z}{last_apply:}{}
   }
   {z}
 }
 \TEST
-{  \clistex:nnn{x,y,z}{last_apply:}{} }
+{  \clistmap:nnn{x,y,z}{last_apply:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 %---
@@ -65,12 +65,12 @@
   \exp_args:Ne
   \str_if_eq_p:nn
   {%
-    \clistex:nnn{foo,bar,baz}{last_apply:}{}
+    \clistmap:nnn{foo,bar,baz}{last_apply:}{}
   }
   {baz}
 }
 \TEST
-{  \clistex:nnn{foo,bar,baz}{last_apply:}{} }
+{  \clistmap:nnn{foo,bar,baz}{last_apply:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 %---
@@ -79,12 +79,12 @@
   \exp_args:Ne
   \str_if_eq_p:nn
   {%
-    \clistex:nnn{{foo},{bar},{baz}}{last_apply:}{}
+    \clistmap:nnn{{foo},{bar},{baz}}{last_apply:}{}
   }
   {{baz}}
 }
 \TEST
-{  \clistex:nnn{{foo},{bar},{baz}}{last_apply:}{} }
+{  \clistmap:nnn{{foo},{bar},{baz}}{last_apply:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 
@@ -95,12 +95,12 @@
   \exp_args:Ne
   \str_if_eq_p:nn
   {%
-    \clistex:nnn{{f,oo},{b,ar},{b,az}}{last_apply:}{}
+    \clistmap:nnn{{f,oo},{b,ar},{b,az}}{last_apply:}{}
   }
   {{b,az}}
 }
 \TEST
-{  \clistex:nnn{{f,oo},{b,ar},{b,az}}{last_apply:}{} }
+{  \clistmap:nnn{{f,oo},{b,ar},{b,az}}{last_apply:}{} }
 {\bool_if:NTF\l_tmpa_bool\TRUE\FALSE}
 
 %\END

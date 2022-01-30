@@ -1,9 +1,9 @@
 \input regression-test.tex
 \documentclass{article}
-\usepackage{clistex}
+\usepackage{clistmap}
 \ExplSyntaxOn
 
-% \str_if_eq_p expandable, but \clistex_inline:nnnn is not
+% \str_if_eq_p expandable, but \clistmap_inline:nnnn is not
 % Thus a reference file
 
 \ExplSyntaxOff
@@ -14,7 +14,7 @@
 \TEST
 {
   \noindent
-  \clistex_inline:nnnn
+  \clistmap_inline:nnnn
   {{foo},{bar,baz},{qux}}
   {comma_unbrace:}
   {}
@@ -25,7 +25,7 @@
 }
 {
   \noindent
-  \clistex_inline:nnnn
+  \clistmap_inline:nnnn
   {{foo},{bar,baz},{qux}}
   {comma_unbrace:}
   {}
