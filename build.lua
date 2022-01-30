@@ -1,11 +1,11 @@
 #!/usr/bin/env texlua
 
-module = "clistex"
+module = "clistmap"
 
 excludefiles = {"*bib"}
 
 checksuppfiles = {"*.sty"}
 
-docfiles = {"clistex.pdf"}
+docfiles = {"clistmap.pdf"}
 
 typesetfiles  = {}
